@@ -1,106 +1,112 @@
-Coffee Shop Sales Data Analysis with Python
-Overview
-This project analyzes sales data from a coffee shop to gain insights into customer behavior, popular products, and sales trends across different times and locations. The analysis was performed using the pandas library for data manipulation and the matplotlib library for data visualization in Python.
+# Coffee Shop Sales Data Analysis with Python
+📊 *Exploring customer behavior, popular products, and sales trends to drive better business decisions.*
 
-Business Problem
-The goal of this analysis is to answer key business questions such as:
+---
 
-What are the peak sales hours of the day?
+## 📌 Overview
+This project analyzes **realistic coffee shop sales data** to uncover patterns in:
+- **Customer behavior**
+- **Peak sales times**
+- **Popular products & categories**
+- **Store location performance**
 
-Are there any noticeable sales trends throughout the month?
+The analysis was performed in **Python** using:
+- `pandas` → Data loading, cleaning, and aggregation  
+- `matplotlib` → Data visualization  
 
-How does sales performance compare across different store locations?
+---
 
-Which product categories are the most popular?
+## 💡 Business Questions
+We focused on answering:
+1. What are the **peak sales hours** of the day?  
+2. Are there any noticeable **sales trends** throughout the month?  
+3. How does **sales performance** compare across locations?  
+4. Which **product categories** are most popular?  
+5. What’s the **best-selling item** at each location?  
+6. What’s the **total revenue** generated?  
 
-What is the best-selling item at each store location?
+---
 
-What is the total revenue generated?
+## 📂 Data Source
+**Coffee Shop Sales.xlsx** — transaction-level sales data including:
+- Transaction ID, date, and time  
+- Quantity sold  
+- Store location  
+- Product category and name  
+- Unit price  
 
-Data Source
-The data for this analysis is contained in the Coffee Shop Sales.xlsx file. This file includes information about individual transactions, such as the transaction ID, date, time, quantity, store details, product details, and unit price.
+---
 
-Analysis Steps
-The following steps were taken to analyze the data:
+## 🔍 Analysis Workflow
 
-Data Loading and Cleaning:
+### 1️⃣ Data Loading & Cleaning
+- Loaded `.xlsx` into a pandas DataFrame  
+- Combined `transaction_date` and `transaction_time` → `datetime` column  
+- Extracted `transaction_month`, `transaction_day`, `transaction_hour`  
+- Created `total_sales` = `transaction_qty × unit_price`  
 
-The Coffee Shop Sales.xlsx file was loaded into a pandas DataFrame.
+### 2️⃣ Exploratory Data Analysis (EDA)
+- Reviewed structure with `.head()` & `.info()`  
+- Checked missing values and anomalies  
 
-The transaction_date and transaction_time columns were combined and converted to a datetime format.
+### 3️⃣ Sales Analysis
+- **By Hour** → Identified peak hours *(9–10 AM)* 📈  
+- **By Day** → Found monthly sales dips near month-end  
+- **By Location** → Compared Astoria, Hell's Kitchen, Lower Manhattan  
+- **By Category** → Coffee & Tea dominate sales  
+- **Best Seller per Location** → Barista Espresso in all locations  
+- **Total Revenue** → `$698,812.33`  
 
-New columns for transaction_month, transaction_day, and transaction_hour were extracted from the datetime column.
+---
 
-A total_sales column was calculated by multiplying the transaction_qty by the unit_price.
+## 📊 Key Visuals
 
-Exploratory Data Analysis (EDA):
+![Sales by Hour](sales_by_hour.png)  
+![Sales by Day](sales_by_day.png)  
+![Sales by Location](Sales_by_location.png)  
 
-The initial structure and information of the DataFrame were examined using head() and info().
+---
 
-Sales Analysis:
+## ⚙️ How to Run
 
-Sales by Hour: Total sales were aggregated by the hour of the day to identify peak hours. A bar chart (sales_by_hour.png) was generated to visualize these results.
-
-Sales by Day of the Month: Total sales were aggregated by the day of the month to identify any monthly trends. A line plot (sales_by_day.png) was generated.
-
-Sales by Store Location: Total sales were aggregated by each store location to compare their performance. A bar chart (sales_by_location.png) was generated.
-
-Sales by Product Category: Total sales were aggregated by product category to determine the most popular categories. A bar chart (sales_by_category.png) was generated.
-
-Best Selling Item by Location: The product with the highest total sales was identified for each store location. The results are printed in the console.
-
-Total Sales Calculation:
-
-The total revenue generated from all transactions was calculated.
-
-Key Findings
-The peak sales hours are between 9 AM and 10 AM.
-
-Sales tend to fluctuate throughout the month, with a noticeable dip towards the end of the month.
-
-Sales performance is relatively similar across all three store locations (Astoria, Hell's Kitchen, Lower Manhattan).
-
-The most popular product categories are Coffee and Tea.
-
-The best-selling item at each store location is Barista Espresso.
-
-The total revenue generated from all transactions is **698,812.33**.
-
-Code
-The Python code used for this analysis is available in the analysis.py file.
-
-How to Run the Code
-Make sure you have Python installed.
-
-Clone this repository to your local machine.
-
-Navigate to the project directory in your terminal.
-
-Create and activate a virtual environment (if you haven't already):
 ```bash
-python -m venv my_venv
-source my_venv/bin/activate  # On macOS and Linux
+# Clone the repo
+git clone https://github.com/Mehdi83/Coffee_Shop.git
+cd Coffee_Shop
 
-my_venv\Scripts\activate # On Windows
-```
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 
-Install the required libraries:
-```bash
-pip install pandas matplotlib openpyxl
-```
+# Install dependencies
+pip install -r requirements.txt
 
-Ensure the cleaned_coffee_shop_data.csv file is in the same directory as analysis.py. If not, run the previous steps of our interactive session to generate this file from the original Coffee Shop Sales.xlsx.
-
-Run the analysis script:
-```bash
+# Run analysis
 python analysis.py
 ```
 
-The script will print the best-selling item by location and the total sales in the console, and it will save the generated charts as .png files in the project directory.
+*Outputs will be saved as `.png` in the project directory.*
 
-Next Steps (Optional)
-Further analysis could explore sales trends by specific product types within categories.
+---
 
-Time series analysis could be performed to forecast future sales.
+## 🚀 Future Improvements
+- Time series forecasting for sales trends  
+- Deep dive into specific product subcategories  
+- Customer segmentation analysis  
 
-Customer segmentation could provide deeper insights into purchasing patterns.
+---
+
+## 🛠 Tech Stack
+- **Language:** Python 3.x  
+- **Libraries:** pandas, matplotlib, openpyxl  
+- **Data Source:** Excel dataset  
+
+---
+
+## ✍️ Author
+Created by **Mehdi Rafieezadeh** — *Data Analyst*  
+📧 mrafizade30@gmail.com
+
+
+
